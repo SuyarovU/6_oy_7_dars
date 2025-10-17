@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex justify-between bg-blue-400 items-center">
+        <h1 class='text-xl font-bold p-4'>Todo qo'shish</h1> 
+        <a href="{% url "home" %}"><button class="rounded-md bg-black text-white p-2 mr-4 cursor-pointer">Orqaga</button></a>
+    </div>
+
+    <form class='form p-4' method="post">
+        {% csrf_token %}
+        <div>
+            <label class="label">Todo</label>
+            <input class="input border rounded-md mb-2" name="title" placeholder="todo nomi">
+        </div>
+        <div>
+            <label class="label">Bio</label>
+            <textarea name="description" class="textarea border rounded-md mb-2" placeholder="Bio"></textarea>
+        </div>
+        <button class="rounded-md bg-black text-white p-2 mr-4 cursor-pointer">Saqlash</button>
+    </form>
+</body>
+</html>
